@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useState } from "react";
+// ROUTES
+import Routes from "./routes";
+// CONTEXT
+import ContextTheme from "./contexts/ContextTheme";
+// STYLES
+import { ThemeProvider } from "styled-components";
+import { dark, light } from "./styles/themes/theme";
+import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
+  const ContTheme = useContext(ContextTheme);
+
+  const [theme, setTheme] = useState({
+    checked: ContTheme.theme.checked,
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextTheme.Provider value={{ theme, setTheme }}>
+      <ThemeProvider theme={theme.checked ? dark : light}>
+        <Routes />
+        <GlobalStyle />
+      </ThemeProvider>
+    </ContextTheme.Provider>
   );
 }
 
