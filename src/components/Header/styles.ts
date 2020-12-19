@@ -1,11 +1,15 @@
 import styled from "styled-components";
-// import { shade } from "polished";
+import { shade, setLightness } from "polished";
 
 export const Container = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid ${(props) => props.theme.colors.background_text};
+  border-bottom: 1px solid
+    ${(props) =>
+      props.theme.title === "dark"
+        ? shade(0.5, props.theme.colors.background_text)
+        : setLightness(0.5, props.theme.colors.background_text)};
   padding: 0.5rem 1rem 0.55rem;
   display: flex;
   flex-direction: row;
@@ -13,7 +17,7 @@ export const Container = styled.div`
   background: ${(props) => props.theme.colors.background};
   transition: all 0.3s;
 
-  > div:nth-child(1) {
+  > .prof {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,7 +53,7 @@ export const Container = styled.div`
     }
   }
 
-  > div:nth-child(2) {
+  > .options {
     display: flex;
     flex: 1;
     justify-content: flex-end;
@@ -62,12 +66,45 @@ export const Container = styled.div`
       outline: none;
       margin: 0 0.5rem;
 
+      &.active {
+        span {
+          color: ${(props) =>
+            props.theme.title === "dark"
+              ? props.theme.colors.background_dt
+              : props.theme.colors.background_text};
+        }
+      }
+
       span {
-        color: ${(props) => props.theme.colors.background_text};
+        color: ${(props) =>
+          props.theme.title === "dark"
+            ? props.theme.colors.background_text
+            : setLightness(0.5, props.theme.colors.background_dt)};
         transition: all 0.2s;
       }
 
-      :hover {
+      :hover:not(.active) {
+        transition: all 0.3s;
+        animation: vibrationText 0.2s infinite linear;
+
+        @keyframes vibrationText {
+          0% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(5deg);
+          }
+          50% {
+            transform: rotate(0deg);
+          }
+          75% {
+            transform: rotate(-5deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
+        }
+
         span {
           color: ${(props) => props.theme.colors.background_dt};
         }
@@ -75,38 +112,18 @@ export const Container = styled.div`
     }
   }
 
-  > div:nth-child(3) {
+  .menu {
+    width: 35px;
+    height: 35px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    background: ${(props) => props.theme.colors.background_darker};
+    border-radius: 2px;
 
-    > div:nth-child(1) {
-      .react-switch-bg {
-        background: ${(props) => props.theme.colors.background_darker} !important;
-
-        > div {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          > svg {
-            margin-top: 0.063rem;
-            color: ${(props) => props.theme.colors.background_text};
-            animation: rotating 10s infinite linear;
-          }
-
-          @keyframes rotating {
-            from {
-              transform: rotate(360deg);
-            }
-          }
-        }
-      }
-
-      .react-switch-handle {
-        background: ${(props) => props.theme.colors.background_text} !important;
-      }
+    svg {
+      font-size: 1.1rem;
+      color: ${(props) => props.theme.colors.background_dt};
     }
   }
 `;

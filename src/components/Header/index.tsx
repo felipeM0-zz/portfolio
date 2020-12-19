@@ -1,26 +1,36 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import Switch from "react-switch";
-// CONTEXT
-import ContextTheme from "../../contexts/ContextTheme";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+// HOOKS
+import { useWidth } from "../../utils/useSizeScreen";
+// COMPONENTS
+import Switch from "../Switch";
 // IMAGES
 import ImgProf from "../../images/prof.jpg";
 // ICONS
-import { MdWbSunny, MdBrightness2 } from "react-icons/md";
+import { MdMenu } from "react-icons/md";
 // STYLES
 import { Container } from "./styles";
 
-const Header = () => {
-  const ContTheme = useContext(ContextTheme);
+interface OptionsProps {
+  route: string;
+  text: string;
+}
 
-  const changeTheme = () => {
-    ContTheme.setTheme({ checked: !ContTheme.theme.checked });
-    localStorage.setItem("theme", JSON.stringify(!ContTheme.theme.checked));
+const Header = (props: { setShowOptions: (arg0: boolean) => void }) => {
+  const width = useWidth();
+  const loc = useLocation().pathname;
+
+  const Options: React.FC<OptionsProps> = ({ route, text }) => {
+    return (
+      <Link to={route} className={route === loc ? "active" : ""}>
+        <span>{text}</span>
+      </Link>
+    );
   };
 
   return (
     <Container>
-      <div>
+      <div className="prof">
         <img src={ImgProf} alt="Felipe" />
         <div>
           <span>Felipe Moreira</span>
@@ -28,32 +38,22 @@ const Header = () => {
         </div>
       </div>
 
-      <div>
-        <Link to="/">
-          <span>Sobre mim</span>
-        </Link>
-        <Link to="/tecnologies">
-          <span>Tecnologias</span>
-        </Link>
-        <Link to="/jobs">
-          <span>Trabalhos</span>
-        </Link>
-        <Link to="/contacts">
-          <span>Contato</span>
-        </Link>
-      </div>
+      {width ? (
+        <React.Fragment>
+          <div className="options">
+            <Options route="/" text="Sobre mim" />
+            <Options route="/tecnologies" text="Tecnologias" />
+            <Options route="/jobs" text="Trabalhos" />
+            <Options route="/contacts" text="Contato" />
+          </div>
 
-      <div>
-        <Switch
-          checked={ContTheme.theme.checked}
-          onChange={() => changeTheme()}
-          width={50}
-          height={25}
-          handleDiameter={19}
-          uncheckedIcon={<MdBrightness2 />}
-          checkedIcon={<MdWbSunny />}
-        />
-      </div>
+          <Switch />
+        </React.Fragment>
+      ) : (
+        <div className="menu" onClick={() => props.setShowOptions(true)}>
+          <MdMenu />
+        </div>
+      )}
     </Container>
   );
 };

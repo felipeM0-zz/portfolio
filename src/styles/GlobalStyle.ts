@@ -15,6 +15,11 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
+  html {
+    transition: all 0.3s;
+    background: ${(props) => props.theme.colors.background_darker};
+  }
+
   body,
   input,
   button,
