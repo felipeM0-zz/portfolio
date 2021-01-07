@@ -88,7 +88,6 @@ export const Container = styled.div`
       span {
         font-size: 1.2rem;
         margin-right: 0.5rem;
-        font-weight: bold;
       }
 
       svg {
@@ -129,9 +128,7 @@ export const Container = styled.div`
       p {
         font-size: 1rem;
         margin-left: 0;
-        padding: 0 0.5rem;
         text-align: justify;
-        font-weight: bold;
       }
     }
 

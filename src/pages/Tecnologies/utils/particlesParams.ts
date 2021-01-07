@@ -1,4 +1,20 @@
 import { OutMode } from "react-particles-js";
+// IMAGES
+import csharp from "../../../images/tecnologies/csharp.png";
+import redux from "../../../images/tecnologies/redux.png";
+import react from "../../../images/tecnologies/react.png";
+import css from "../../../images/tecnologies/css.webp";
+import html from "../../../images/tecnologies/html.png";
+import js from "../../../images/tecnologies/js.png";
+import react_native from "../../../images/tecnologies/react-native.png";
+import unity from "../../../images/tecnologies/unity.png";
+import nodejs from "../../../images/tecnologies/nodejs.png";
+import mysql from "../../../images/tecnologies/mysql.png";
+import jquery from "../../../images/tecnologies/jquery.webp";
+import git from "../../../images/tecnologies/git.png";
+import typescript from "../../../images/tecnologies/typescript.png";
+import styled from "../../../images/tecnologies/styled.png";
+import sass from "../../../images/tecnologies/sass.png";
 
 interface PropsParams {
   particles: {
@@ -78,7 +94,7 @@ export const sizes: PropsSizes = {
 export const params: PropsParams = {
   particles: {
     number: {
-      value: 30,
+      value: 35,
       density: {
         enable: true,
         value_area: 800,
@@ -97,62 +113,77 @@ export const params: PropsParams = {
       type: ["image"],
       image: [
         {
-          src:
-            "https://trickdroid.org/wp-content/uploads/2019/12/Sobre-JavaScript-Definicao-Historia-Usos-e-Forcas.png",
+          src: js,
           height: 25,
           width: 25,
         },
         {
-          src:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png",
+          src: html,
           height: 25,
           width: 25,
         },
         {
-          src:
-            "https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/121-css3-512.png",
+          src: css,
           height: 25,
           width: 25,
         },
         {
-          src: "https://seeklogo.com/images/R/redux-logo-9CA6836C12-seeklogo.com.png",
+          src: redux,
           height: 25,
           width: 25,
         },
         {
-          src: "https://png.pngtree.com/svg/20170719/react_1353128.png",
+          src: react,
           height: 25,
           width: 25,
         },
         {
-          src: "https://cdn.iconscout.com/icon/free/png-256/jquery-7-1175152.png",
+          src: jquery,
           height: 25,
           width: 25,
         },
         {
-          src:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/C_Sharp_logo.svg/1200px-C_Sharp_logo.svg.png",
+          src: csharp,
           height: 25,
           width: 25,
         },
         {
-          src: "https://seeklogo.com/images/M/mysql-logo-69B39F7D18-seeklogo.com.png",
+          src: mysql,
           height: 25,
           width: 25,
         },
         {
-          src: "https://seeklogo.com/images/U/unity-logo-988A22E703-seeklogo.com.png",
+          src: unity,
           height: 25,
           width: 25,
         },
         {
-          src:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/1024px-Git_icon.svg.png",
+          src: git,
           height: 25,
           width: 25,
         },
         {
-          src: "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png",
+          src: nodejs,
+          height: 25,
+          width: 25,
+        },
+        {
+          src: typescript,
+          height: 25,
+          width: 25,
+        },
+        {
+          src: styled,
+          height: 25,
+          width: 25,
+        },
+        {
+          src: sass,
+          height: 25,
+          width: 25,
+        },
+        {
+          src: react_native,
           height: 25,
           width: 25,
         },
