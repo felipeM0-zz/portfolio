@@ -13,8 +13,8 @@ export const light = {
   title: "light",
 
   colors: {
-    background: "#FFFCF2",
-    background_darker: "#cfceca",
+    background: "#FFFFFF",
+    background_darker: "#f5f5f5",
     background_text: "#252422",
     background_dt: "#403D39",
   },

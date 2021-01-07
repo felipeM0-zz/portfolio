@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Drawer from "@material-ui/core/Drawer";
-import { setLightness, shade } from "polished";
+import { setLightness } from "polished";
 
 export const Container = styled(Drawer)`
   .MuiDrawer-paper {

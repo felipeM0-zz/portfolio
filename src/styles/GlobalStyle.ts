@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     transition: all 0.3s;
     background: ${(props) => props.theme.colors.background_darker};
+    min-width: 320px;
   }
 
   body,

@@ -1,17 +1,14 @@
-import React, { useState } from "react";
-// COMPONENTS
-import Header from "../../components/Header";
-import Sidebar from "../../components/Sidebar";
+import React from "react";
 // STYLES
 import { Container } from "./styles";
+import Particles from "react-particles-js";
+
+import { params, sizes } from "./utils/particlesParams";
 
 const Tecnologies = () => {
-  const [showOptions, setShowOptions] = useState(false);
-
   return (
     <Container>
-      <Header setShowOptions={(v) => setShowOptions(v)} />
-      <Sidebar showOptions={showOptions} setShowOptions={(v) => setShowOptions(v)} />
+      <Particles {...sizes} params={params} />
     </Container>
   );
 };

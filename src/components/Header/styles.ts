@@ -8,8 +8,8 @@ export const Container = styled.div`
   border-bottom: 1px solid
     ${(props) =>
       props.theme.title === "dark"
-        ? shade(0.5, props.theme.colors.background_text)
-        : setLightness(0.5, props.theme.colors.background_text)};
+        ? shade(0.7, props.theme.colors.background_text)
+        : setLightness(0.9, props.theme.colors.background_text)};
   padding: 0.5rem 1rem 0.55rem;
   display: flex;
   flex-direction: row;
