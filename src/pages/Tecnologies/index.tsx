@@ -1,46 +1,38 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
 import Particles from "react-particles-js";
-import {
-  Card,
-  CardMedia,
-  // CardContent,
-  // CardActions,
-  // Collapse,
-} from "@material-ui/core";
-// DATA PARAMS
+import { Link } from "react-router-dom";
+// MATERIAL UI
+import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
+// DATA GRID/PARTICLES
 import { params, sizes } from "./utils/particlesParams";
-// DATA
 import { dataGridItem } from "./utils/dataGridItem";
+// INTERFACES
+import { GridItemProps } from "./interfaces";
+// ICONS
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 // STYLES
-import { Container } from "./styles";
-
-interface GridItemProps {
-  img: string;
-  text: string;
-  link: string;
-  name: string;
-  color: string;
-}
+import { Container, GridItem } from "./styles";
 
 const Tecnologies = () => {
-  const GridItem: React.FC<GridItemProps> = ({ img, text, link, name, color }) => {
+  const GridContainer: React.FC<GridItemProps> = ({ img, text, link, name, color }) => {
     return (
-      <Grid item md={4} sm={6} xs={12}>
+      <GridItem item md={4} sm={6} xs={12} color={color}>
         <Card>
           <CardMedia>
             <img src={img} alt={name} />
           </CardMedia>
           <div>
             <span>
-              <a rel="noreferrer" target="_blank" style={{ color: color }} href={link}>
+              <a rel="noreferrer" target="_blank" href={link}>
                 {name}
               </a>
             </span>
             <p>{text}</p>
           </div>
         </Card>
-      </Grid>
+      </GridItem>
     );
   };
 
@@ -51,7 +43,7 @@ const Tecnologies = () => {
       <Grid container>
         {Object.values(dataGridItem).map((dt, i) => {
           return (
-            <GridItem
+            <GridContainer
               key={i}
               img={dt.img}
               text={dt.text}
@@ -62,6 +54,17 @@ const Tecnologies = () => {
           );
         })}
       </Grid>
+
+      <div>
+        <Link to="/">
+          <BsArrowLeft />
+          <span>Sobre mim</span>
+        </Link>
+        <Link to="/jobs">
+          <span>Trabalhos</span>
+          <BsArrowRight />
+        </Link>
+      </div>
     </Container>
   );
 };

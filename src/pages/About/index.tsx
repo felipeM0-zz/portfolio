@@ -1,18 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { BsArrowRight } from "react-icons/bs";
-// STYLES
-import { Container } from "./styles";
 import Lottie from "react-lottie";
+import { Link } from "react-router-dom";
+// INTERFACES
+import { ElementProps } from "./interfaces";
 // OBJECTS LOTTIE
 import about from "../../images/lottie/about.json";
 import studies from "../../images/lottie/studies.json";
 import tecnologies from "../../images/lottie/tecnologies.json";
-
-interface ElementProps {
-  text: string;
-  animation: object;
-}
+// ICONS
+import { BsArrowRight } from "react-icons/bs";
+// STYLES
+import { Container } from "./styles";
 
 const About = () => {
   const Element: React.FC<ElementProps> = ({ text, animation }) => {

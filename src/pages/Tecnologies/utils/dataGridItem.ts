@@ -91,7 +91,7 @@ export const dataGridItem = {
   git: {
     img: git,
     text:
-      "Git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo",
+      "Git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo.",
     link: "https://git-scm.com/",
     name: "Git",
     color: "#f05133",
@@ -110,7 +110,7 @@ export const dataGridItem = {
       "C# surge como uma linguagem simples, robusta, orientada a objetos, fortemente tipada e altamente escalável a fim de permitir que uma mesma aplicação possa ser executada em diversos dispositivos de hardware.",
     link: "https://docs.microsoft.com/pt-br/dotnet/csharp/",
     name: "C#",
-    color: "#a075da",
+    color: "#8c5fc9",
   },
   typescript: {
     img: typescript,
