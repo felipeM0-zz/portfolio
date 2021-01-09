@@ -2,6 +2,8 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 // HOOKS
 import { useWidth } from "../../utils/useSizeScreen";
+// INTERFACES
+import { OptionsProps } from "./interfaces";
 // COMPONENTS
 import Switch from "../Switch";
 // IMAGES
@@ -10,11 +12,6 @@ import ImgProf from "../../images/prof.jpg";
 import { MdMenu } from "react-icons/md";
 // STYLES
 import { Container } from "./styles";
-
-interface OptionsProps {
-  route: string;
-  text: string;
-}
 
 const Header = (props: { setShowOptions: (arg0: boolean) => void }) => {
   const width = useWidth();

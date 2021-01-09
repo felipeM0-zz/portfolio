@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Grid from "@material-ui/core/Grid";
-import { setLightness, shade } from "polished";
 
 export const Container = styled.div`
   #tsparticles canvas {
@@ -14,108 +13,9 @@ export const Container = styled.div`
     padding: 0.7rem;
   }
 
-  > div:last-child {
-    display: flex;
-    padding: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    transition: all 0.3s;
-    margin: 2rem 1rem 1rem;
-    justify-content: space-between;
-    border-top: 1px solid
-      ${(props) =>
-        props.theme.title === "dark"
-          ? shade(0.8, props.theme.colors.background_text)
-          : setLightness(0.8, props.theme.colors.background_text)};
-
-    > a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: ${(props) => props.theme.colors.background_dt};
-      transition: all 0.3s;
-      opacity: 0.5;
-
-      &:hover {
-        opacity: 1;
-
-        svg {
-          animation: pulseArrowNext 0.7s infinite;
-
-          @keyframes pulseArrowNext {
-            0% {
-              transform: translate(0px, 0px);
-            }
-            50% {
-              transform: translate(10px, 0px);
-            }
-            100% {
-              transform: translate(0px, 0px);
-            }
-          }
-        }
-      }
-
-      span {
-        font-size: 1.2rem;
-        margin-right: 0.5rem;
-      }
-
-      svg {
-        font-size: 2rem;
-      }
-    }
-
-    > a:first-child {
-      &:hover {
-        svg {
-          animation: pulseArrowPrevious 0.7s infinite;
-
-          @keyframes pulseArrowPrevious {
-            0% {
-              transform: translate(0px, 0px);
-            }
-            50% {
-              transform: translate(-10px, 0px);
-            }
-            100% {
-              transform: translate(0px, 0px);
-            }
-          }
-        }
-      }
-    }
-  }
-
   @media (max-width: 768px) {
     .MuiGrid-container {
       padding: 0.2rem;
-    }
-  }
-
-  @media (max-width: 600px) {
-    > div:last-child {
-      padding: 1.3rem 0 0;
-
-      a {
-        span {
-          font-size: 1rem;
-        }
-
-        svg {
-          font-size: 1.5rem;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 425px) {
-    > div:last-child {
-      a {
-        svg {
-          animation: none !important;
-        }
-      }
     }
   }
 `;
