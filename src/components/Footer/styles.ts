@@ -62,13 +62,8 @@ export const Container = styled.div.attrs((props: ContainerProps) => ({
   }
 
   .next.active {
-    animation: goingNext 0.4s forwards;
-
-    @keyframes goingNext {
-      to {
-        opacity: 0;
-      }
-    }
+    animation: actionPagePulse 0.4s infinite;
+    animation-iteration-count: 2;
   }
 
   .previous {
@@ -95,13 +90,22 @@ export const Container = styled.div.attrs((props: ContainerProps) => ({
     }
 
     &.active {
-      animation: goingPrevious 0.4s forwards;
+      animation: actionPagePulse 0.4s infinite;
+      animation-iteration-count: 2;
+    }
+  }
 
-      @keyframes goingPrevious {
-        to {
-          opacity: 0;
-        }
-      }
+  /* GLOBAL ANIMATION */
+
+  @keyframes actionPagePulse {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.07, 1.07);
+    }
+    100% {
+      transform: scale(1, 1);
     }
   }
 

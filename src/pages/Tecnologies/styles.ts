@@ -26,11 +26,11 @@ export const GridItem = styled(Grid).attrs((props) => ({
   color: props.color,
 }))`
   .MuiCard-root {
-    margin: 0.7rem;
+    transition: all 0.3s;
+    margin: 1rem;
     padding: 1rem;
     min-height: 200px;
     display: flex;
-    transition: all 0.3s;
     position: relative;
     background: ${(props) => props.theme.colors.background};
 
@@ -99,6 +99,12 @@ export const GridItem = styled(Grid).attrs((props) => ({
           height: 50px;
         }
       }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .MuiCard-root {
+      min-height: max-content;
     }
   }
 
