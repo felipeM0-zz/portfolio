@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import Grid from "@material-ui/core/Grid";
+import { transparentize } from "polished";
 
 export const Container = styled.div``;
 
-interface GridProps {
+interface StylesProps {
   link: string;
+  color: string;
 }
 
-export const GridItem = styled(Grid).attrs((props: GridProps) => ({
+export const GridItem = styled(Grid).attrs((props: StylesProps) => ({
   link: props.link,
 }))`
   .MuiCard-root {
@@ -35,6 +37,30 @@ export const GridItem = styled(Grid).attrs((props: GridProps) => ({
         transition: all 0.4s;
         color: ${(props) => props.theme.colors.background_text};
       }
+
+      > .MuiDivider-root {
+        margin: 0.7rem 0;
+      }
+
+      .type {
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+        justify-content: flex-end;
+        opacity: 0.4;
+        color: ${(props) => props.theme.colors.background_text};
+
+        span {
+          font-size: 0.8rem;
+          border-radius: 4px;
+          margin: 0.1rem 0.3rem 0 0;
+        }
+      }
+
+      .tecs {
+        display: flex;
+        flex-wrap: wrap;
+      }
     }
 
     .MuiCardActions-root {
@@ -56,4 +82,17 @@ export const GridItem = styled(Grid).attrs((props: GridProps) => ({
       }
     }
   }
+`;
+
+export const SpanTec = styled("span").attrs((props: StylesProps) => ({
+  color: props.color,
+}))`
+  font-size: 0.8rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+  margin: 0 0.3rem 0.3rem 0;
+  padding: 0.2rem 0.4rem 0.1rem;
+  color: ${(props) => props.theme.colors.background_text};
+  background: ${(props) =>
+    transparentize(props.theme.title === "dark" ? 0.8 : 0.3, props.color)};
 `;

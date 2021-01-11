@@ -1,20 +1,6 @@
 import { OutMode } from "react-particles-js";
-// IMAGES
-import csharp from "../../../images/tecnologies/csharp.png";
-import redux from "../../../images/tecnologies/redux.png";
-import react from "../../../images/tecnologies/react.png";
-import css from "../../../images/tecnologies/css.webp";
-import html from "../../../images/tecnologies/html.png";
-import js from "../../../images/tecnologies/js.png";
-import react_native from "../../../images/tecnologies/react-native.png";
-import unity from "../../../images/tecnologies/unity.png";
-import nodejs from "../../../images/tecnologies/nodejs.png";
-import mysql from "../../../images/tecnologies/mysql.png";
-import jquery from "../../../images/tecnologies/jquery.webp";
-import git from "../../../images/tecnologies/git.png";
-import typescript from "../../../images/tecnologies/typescript.png";
-import styled from "../../../images/tecnologies/styled.png";
-import sass from "../../../images/tecnologies/sass.png";
+// COLORS TECS
+import { Tecs } from "./dataTecs";
 
 interface PropsParams {
   particles: {
@@ -113,77 +99,132 @@ export const params: PropsParams = {
       type: ["image"],
       image: [
         {
-          src: js,
+          src: Tecs.c_csharp[4],
           height: 25,
           width: 25,
         },
         {
-          src: html,
+          src: Tecs.c_css[4],
           height: 25,
           width: 25,
         },
         {
-          src: css,
+          src: Tecs.c_git[4],
           height: 25,
           width: 25,
         },
         {
-          src: redux,
+          src: Tecs.c_github[4],
           height: 25,
           width: 25,
         },
         {
-          src: react,
+          src: Tecs.c_html[4],
           height: 25,
           width: 25,
         },
         {
-          src: jquery,
+          src: Tecs.c_jquery[4],
           height: 25,
           width: 25,
         },
         {
-          src: csharp,
+          src: Tecs.c_js[4],
           height: 25,
           width: 25,
         },
         {
-          src: mysql,
+          src: Tecs.c_materialize[4],
           height: 25,
           width: 25,
         },
         {
-          src: unity,
+          src: Tecs.c_materialui[4],
           height: 25,
           width: 25,
         },
         {
-          src: git,
+          src: Tecs.c_mysql[4],
           height: 25,
           width: 25,
         },
         {
-          src: nodejs,
+          src: Tecs.c_nodejs[4],
           height: 25,
           width: 25,
         },
         {
-          src: typescript,
+          src: Tecs.c_react[4],
           height: 25,
           width: 25,
         },
         {
-          src: styled,
+          src: Tecs.c_react_native[4],
           height: 25,
           width: 25,
         },
         {
-          src: sass,
+          src: Tecs.c_reactbt[4],
           height: 25,
           width: 25,
         },
         {
-          src: react_native,
+          src: Tecs.c_redux[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_sass[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_styled[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_typescript[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_unity[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_lottie[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_axios[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_react_icons[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_sweetalert[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_react_router[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_react_navigation[4],
+          height: 25,
+          width: 25,
+        },
+        {
+          src: Tecs.c_react_leaflet[4],
           height: 25,
           width: 25,
         },

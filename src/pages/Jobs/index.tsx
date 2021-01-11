@@ -14,8 +14,10 @@ import { Data } from "./utils/dataRecover";
 // ICONS
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { RiExternalLinkFill } from "react-icons/ri";
+import { FaMobileAlt, FaDesktop } from "react-icons/fa";
 // STYLES
-import { Container, GridItem } from "./styles";
+import { Container, GridItem, SpanTec } from "./styles";
+import { Divider } from "@material-ui/core";
 
 const Jobs = () => {
   return (
@@ -30,6 +32,21 @@ const Jobs = () => {
                   {e.src.img[0] && <img src={e.src.img[0]} alt={e.name} />}
                   <CardContent>
                     <Typography component="p">{e.abs}</Typography>
+                    <Divider />
+                    <div className="type">
+                      <span>{e.type}</span>
+                      {e.type === "Mobile" ? <FaMobileAlt /> : <FaDesktop />}
+                    </div>
+                    <Divider />
+                    <div className="tecs">
+                      {e.tec.map((e, i) => {
+                        return (
+                          <SpanTec key={i} color={e[1]}>
+                            {e[0]}
+                          </SpanTec>
+                        );
+                      })}
+                    </div>
                   </CardContent>
                   <CardActions>
                     {e.link !== "" && (

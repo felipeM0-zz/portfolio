@@ -1,139 +1,187 @@
-// IMAGES
-import csharp from "../../../images/tecnologies/csharp.png";
-import redux from "../../../images/tecnologies/redux.png";
-import react from "../../../images/tecnologies/react.png";
-import css from "../../../images/tecnologies/css.webp";
-import html from "../../../images/tecnologies/html.png";
-import js from "../../../images/tecnologies/js.png";
-import react_native from "../../../images/tecnologies/react-native.png";
-import unity from "../../../images/tecnologies/unity.png";
-import nodejs from "../../../images/tecnologies/nodejs.png";
-import mysql from "../../../images/tecnologies/mysql.png";
-import jquery from "../../../images/tecnologies/jquery.webp";
-import git from "../../../images/tecnologies/git.png";
-import typescript from "../../../images/tecnologies/typescript.png";
-import styled from "../../../images/tecnologies/styled.png";
-import sass from "../../../images/tecnologies/sass.png";
+// COLORS TECS
+import { Tecs } from "./dataTecs";
 
-export const dataGridItem = {
-  react: {
-    img: react,
-    text:
-      "O React é uma biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.",
-    link: "https://pt-br.reactjs.org/",
-    name: "React",
-    color: "#00bcd4",
+export const dataGridItem = [
+  {
+    name: Tecs.c_react[0],
+    color: Tecs.c_react[1],
+    text: Tecs.c_csharp[2],
+    link: Tecs.c_csharp[3],
+    img: Tecs.c_react[4],
   },
-  redux: {
-    img: redux,
-    text:
-      "Redux é uma biblioteca JavaScript de código aberto para gerenciar o estado do aplicativo. É mais comumente usado com bibliotecas como React ou Angular para criar interfaces de usuário.",
-    link: "https://redux.js.org/",
-    name: "Redux",
-    color: "#764abc",
+  {
+    name: Tecs.c_redux[0],
+    color: Tecs.c_redux[1],
+    text: Tecs.c_redux[2],
+    link: Tecs.c_redux[3],
+    img: Tecs.c_redux[4],
   },
-  react_native: {
-    img: react_native,
-    text:
-      "React Native é uma biblioteca Javascript usada para criar apps em sistemas Android/iOS de forma nativa. Executado em segundo plano no dispositivo final, ele se comunica com a plataforma nativa por meio de serialização.",
-    link: "https://reactnative.dev/",
-    name: "React Native",
-    color: "#00d7fe",
+  {
+    name: Tecs.c_react_native[0],
+    color: Tecs.c_react_native[1],
+    text: Tecs.c_react[2],
+    link: Tecs.c_react[3],
+    img: Tecs.c_react_native[4],
   },
-  unity: {
-    img: unity,
-    text:
-      "Unity (Também conhecida como Unity3D ou UnityEngine), é um motor de jogo proprietário. Plataforma de desenvolvimento de jogos em tempo real.",
-    link: "https://unity.com/pt",
-    name: "Unity",
-    color: "#045bb7",
+  {
+    name: Tecs.c_unity[0],
+    color: Tecs.c_unity[1],
+    text: Tecs.c_css[2],
+    link: Tecs.c_css[3],
+    img: Tecs.c_unity[4],
   },
-  nodejs: {
-    img: nodejs,
-    text:
-      "Node.js trata-se de um software open-source, cross-platform, e de um runtime de JavaScript que execute código de JavaScript a nível backend e frontend.",
-    link: "https://nodejs.org/pt-br/",
-    name: "NodeJS",
-    color: "#539d43",
+  {
+    name: Tecs.c_nodejs[0],
+    color: Tecs.c_nodejs[1],
+    text: Tecs.c_html[2],
+    link: Tecs.c_html[3],
+    img: Tecs.c_nodejs[4],
   },
-  mysql: {
-    img: mysql,
-    text:
-      "O MySQL é um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface. É hoje um dos SGBD's mais populares da Oracle.",
-    link: "https://www.mysql.com/",
-    name: "MySQL",
-    color: "#0173b0",
+  {
+    name: Tecs.c_mysql[0],
+    color: Tecs.c_mysql[1],
+    text: Tecs.c_js[2],
+    link: Tecs.c_js[3],
+    img: Tecs.c_mysql[4],
   },
-  js: {
-    img: js,
-    text:
-      "JavaScript é uma linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma. Juntamente com HTML e CSS, o JavaScript é uma das três principais tecnologias da Web.",
-    link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
-    name: "JavaScript",
-    color: "#d5b931",
+  {
+    name: Tecs.c_js[0],
+    color: Tecs.c_js[1],
+    text: Tecs.c_react_native[2],
+    link: Tecs.c_react_native[3],
+    img: Tecs.c_js[4],
   },
-  jquery: {
-    img: jquery,
-    text:
-      "jQuery é uma biblioteca de funções JavaScript que interage com o HTML, desenvolvida para simplificar os scripts interpretados no navegador do cliente.",
-    link: "https://jquery.com/",
-    name: "JQuery",
-    color: "#0868ac",
+  {
+    name: Tecs.c_jquery[0],
+    color: Tecs.c_jquery[1],
+    text: Tecs.c_unity[2],
+    link: Tecs.c_unity[3],
+    img: Tecs.c_jquery[4],
   },
-  html: {
-    img: html,
-    text:
-      "HTML é uma linguagem de marcação utilizada na construção de páginas na Web. Documentos HTML podem ser interpretados por navegadores. A tecnologia é fruto da junção entre os padrões HyTime e SGML.",
-    link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
-    name: "HTML",
-    color: "#e34f26",
+  {
+    name: Tecs.c_html[0],
+    color: Tecs.c_html[1],
+    text: Tecs.c_nodejs[2],
+    link: Tecs.c_nodejs[3],
+    img: Tecs.c_html[4],
   },
-  git: {
-    img: git,
-    text:
-      "Git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo.",
-    link: "https://git-scm.com/",
-    name: "Git",
-    color: "#f05133",
+  {
+    name: Tecs.c_git[0],
+    color: Tecs.c_git[1],
+    text: Tecs.c_mysql[2],
+    link: Tecs.c_mysql[3],
+    img: Tecs.c_git[4],
   },
-  css: {
-    img: css,
-    text:
-      "CSS é uma folha de estilo composta por camadas utilizadas para definir a apresentação em páginas da web que adotam para o seu desenvolvimento linguagens de marcação (como XML, HTML e XHTML).",
-    link: "https://www.w3schools.com/css/",
-    name: "CSS",
-    color: "#2299f8",
+  {
+    name: Tecs.c_css[0],
+    color: Tecs.c_css[1],
+    text: Tecs.c_jquery[2],
+    link: Tecs.c_jquery[3],
+    img: Tecs.c_css[4],
   },
-  csharp: {
-    img: csharp,
-    text:
-      "C# surge como uma linguagem simples, robusta, orientada a objetos, fortemente tipada e altamente escalável a fim de permitir que uma mesma aplicação possa ser executada em diversos dispositivos de hardware.",
-    link: "https://docs.microsoft.com/pt-br/dotnet/csharp/",
-    name: "C#",
-    color: "#8c5fc9",
+  {
+    name: Tecs.c_csharp[0],
+    color: Tecs.c_csharp[1],
+    text: Tecs.c_git[2],
+    link: Tecs.c_git[3],
+    img: Tecs.c_csharp[4],
   },
-  typescript: {
-    img: typescript,
-    text:
-      "TypeScript é um superconjunto de JavaScript desenvolvido pela Microsoft que adiciona tipagem e alguns outros recursos a linguagem.",
-    link: "https://www.typescriptlang.org/pt/",
-    name: "TypeScript",
-    color: "#007acc",
+  {
+    name: Tecs.c_typescript[0],
+    color: Tecs.c_typescript[1],
+    text: Tecs.c_typescript[2],
+    link: Tecs.c_typescript[3],
+    img: Tecs.c_typescript[4],
   },
-  styled: {
-    img: styled,
-    text:
-      "Styled-Components utiliza literais de template marcados para estilizar seus componentes. Ele remove o mapeamento entre componentes e estilos, e ao definir seus estilos, tem seus estilos anexados a ele.",
-    link: "https://styled-components.com/",
-    name: "Styled-Components",
-    color: "#e78f7d",
+  {
+    name: Tecs.c_styled[0],
+    color: Tecs.c_styled[1],
+    text: Tecs.c_styled[2],
+    link: Tecs.c_styled[3],
+    img: Tecs.c_styled[4],
   },
-  sass: {
-    img: sass,
-    text:
-      "Sass é um pré-processador CSS, open-source e codificada em Ruby. A sintaxe original, chamada de sintaxe indentada usa indentação para separar blocos de código. A sintaxe mais recente, SCSS, usa formatação de bloco, como a de CSS.",
-    link: "https://sass-lang.com/",
-    name: "Sass",
-    color: "#cb6698",
+  {
+    name: Tecs.c_sass[0],
+    color: Tecs.c_sass[1],
+    text: Tecs.c_sass[2],
+    link: Tecs.c_sass[3],
+    img: Tecs.c_sass[4],
   },
-};
+  {
+    name: Tecs.c_materialui[0],
+    color: Tecs.c_materialui[1],
+    text: Tecs.c_materialui[2],
+    link: Tecs.c_materialui[3],
+    img: Tecs.c_materialui[4],
+  },
+  {
+    name: Tecs.c_reactbt[0],
+    color: Tecs.c_reactbt[1],
+    text: Tecs.c_reactbt[2],
+    link: Tecs.c_reactbt[3],
+    img: Tecs.c_reactbt[4],
+  },
+  {
+    name: Tecs.c_materialize[0],
+    color: Tecs.c_materialize[1],
+    text: Tecs.c_materialize[2],
+    link: Tecs.c_materialize[3],
+    img: Tecs.c_materialize[4],
+  },
+  {
+    name: Tecs.c_github[0],
+    color: Tecs.c_github[1],
+    text: Tecs.c_github[2],
+    link: Tecs.c_github[3],
+    img: Tecs.c_github[4],
+  },
+  {
+    name: Tecs.c_lottie[0],
+    color: Tecs.c_lottie[1],
+    text: Tecs.c_lottie[2],
+    link: Tecs.c_lottie[3],
+    img: Tecs.c_lottie[4],
+  },
+  {
+    name: Tecs.c_axios[0],
+    color: Tecs.c_axios[1],
+    text: Tecs.c_axios[2],
+    link: Tecs.c_axios[3],
+    img: Tecs.c_axios[4],
+  },
+  {
+    name: Tecs.c_react_icons[0],
+    color: Tecs.c_react_icons[1],
+    text: Tecs.c_react_icons[2],
+    link: Tecs.c_react_icons[3],
+    img: Tecs.c_react_icons[4],
+  },
+  {
+    name: Tecs.c_sweetalert[0],
+    color: Tecs.c_sweetalert[1],
+    text: Tecs.c_sweetalert[2],
+    link: Tecs.c_sweetalert[3],
+    img: Tecs.c_sweetalert[4],
+  },
+  {
+    name: Tecs.c_react_router[0],
+    color: Tecs.c_react_router[1],
+    text: Tecs.c_react_router[2],
+    link: Tecs.c_react_router[3],
+    img: Tecs.c_react_router[4],
+  },
+  {
+    name: Tecs.c_react_navigation[0],
+    color: Tecs.c_react_navigation[1],
+    text: Tecs.c_react_navigation[2],
+    link: Tecs.c_react_navigation[3],
+    img: Tecs.c_react_navigation[4],
+  },
+  {
+    name: Tecs.c_react_leaflet[0],
+    color: Tecs.c_react_leaflet[1],
+    text: Tecs.c_react_leaflet[2],
+    link: Tecs.c_react_leaflet[3],
+    img: Tecs.c_react_leaflet[4],
+  },
+];

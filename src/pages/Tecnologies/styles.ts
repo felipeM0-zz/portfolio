@@ -66,7 +66,7 @@ export const GridItem = styled(Grid).attrs((props) => ({
           text-decoration: none;
           color: ${(props) => props.color};
           text-shadow: 1px 1px 1px
-            ${(props) => (props.theme.title === "dark" ? "#262626" : "#adadad")};
+            ${(props) => (props.theme.title === "dark" ? "#262626" : "#808080")};
         }
       }
 

@@ -41,7 +41,7 @@ const Tecnologies = () => {
         <Particles {...sizes} params={params} />
 
         <Grid container>
-          {Object.values(dataGridItem).map((dt, i) => {
+          {dataGridItem.map((dt, i) => {
             return (
               <GridContainer
                 key={i}
