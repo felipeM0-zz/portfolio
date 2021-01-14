@@ -7,3 +7,8 @@ export interface BtnFilterProps {
   target: string;
   icon: JSX.Element;
 }
+
+export interface StylesProps {
+  link: string;
+  color: string;
+}

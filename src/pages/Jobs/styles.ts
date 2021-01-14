@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import Grid from "@material-ui/core/Grid";
 import { transparentize } from "polished";
+// MATERIAL UI
+import Grid from "@material-ui/core/Grid";
+import Tooltip from "@material-ui/core/Tooltip";
+import { withStyles } from "@material-ui/core/styles";
+// INTERFACES
+import { StylesProps } from "./interfaces";
 
 export const Container = styled.div``;
-
-interface StylesProps {
-  link: string;
-  color: string;
-}
 
 export const GridItem = styled(Grid).attrs((props: StylesProps) => ({
   link: props.link,
@@ -92,10 +92,21 @@ export const SpanTec = styled("span").attrs((props: StylesProps) => ({
   transition: all 0.3s;
   margin: 0 0.3rem 0.3rem 0;
   padding: 0.2rem 0.4rem 0.1rem;
-  color: ${(props) => props.theme.colors.background_text};
+  color: ${(props) =>
+    props.theme.title === "dark" ? transparentize(0.2, "#fff") : "#fff"};
+  text-shadow: 0.5px 0.5px 2px #333;
   background: ${(props) =>
-    transparentize(props.theme.title === "dark" ? 0.8 : 0.3, props.color)};
+    transparentize(props.theme.title === "dark" ? 0.8 : 0.15, props.color)};
 `;
+
+export const TooltipSpan = withStyles({
+  tooltip: {
+    backgroundColor: "#333",
+  },
+  arrow: {
+    color: "#333",
+  },
+})(Tooltip);
 
 export const HeaderFilter = styled("div")`
   margin: 1rem 1rem 0;
@@ -106,7 +117,7 @@ export const HeaderFilter = styled("div")`
     margin-bottom: 0.5rem;
     color: ${(props) => props.theme.colors.background_text};
   }
-  
+
   > div {
     .MuiButton-root {
       min-width: auto;
@@ -128,7 +139,7 @@ export const HeaderFilter = styled("div")`
     }
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 425px) {
     > div {
       display: flex;
       justify-content: center;

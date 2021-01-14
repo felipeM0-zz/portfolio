@@ -22,10 +22,10 @@ import { RiExternalLinkFill } from "react-icons/ri";
 import { FaMobileAlt, FaDesktop } from "react-icons/fa";
 import { BiDevices } from "react-icons/bi";
 // STYLES
-import { Container, GridItem, SpanTec, HeaderFilter } from "./styles";
+import { Container, GridItem, SpanTec, HeaderFilter, TooltipSpan } from "./styles";
 
 const Jobs = () => {
-  const width = useWidth(375);
+  const width = useWidth(425);
   const [typeComplete, setTypeComplete] = useState("Todos");
   const [typeIncomplete, setTypeIncomplete] = useState("Todos");
 
@@ -92,9 +92,15 @@ const Jobs = () => {
                     <div className="tecs">
                       {e.tec.map((e, i) => {
                         return (
-                          <SpanTec key={i} color={e[1]}>
-                            {e[0]}
-                          </SpanTec>
+                          <TooltipSpan
+                            placement="top"
+                            arrow
+                            title={<img width={50} height={50} src={e[4]} alt={e[0]} />}
+                          >
+                            <SpanTec key={i} color={e[1]}>
+                              {e[0]}
+                            </SpanTec>
+                          </TooltipSpan>
                         );
                       })}
                     </div>
