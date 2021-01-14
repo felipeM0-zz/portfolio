@@ -14,7 +14,7 @@ import { MdMenu } from "react-icons/md";
 import { Container } from "./styles";
 
 const Header = (props: { setShowOptions: (arg0: boolean) => void }) => {
-  const width = useWidth();
+  const width = useWidth(768);
   const loc = useLocation().pathname;
 
   const Options: React.FC<OptionsProps> = ({ route, text }) => {

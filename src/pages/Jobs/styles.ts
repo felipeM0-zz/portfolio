@@ -96,3 +96,51 @@ export const SpanTec = styled("span").attrs((props: StylesProps) => ({
   background: ${(props) =>
     transparentize(props.theme.title === "dark" ? 0.8 : 0.3, props.color)};
 `;
+
+export const HeaderFilter = styled("div")`
+  margin: 1rem 1rem 0;
+
+  > p {
+    font-size: 2.1rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: ${(props) => props.theme.colors.background_text};
+  }
+  
+  > div {
+    .MuiButton-root {
+      min-width: auto;
+      padding: 4px 6px;
+      margin-right: 0.2rem;
+      border-bottom: 2px solid transparent;
+      color: ${(props) => props.theme.colors.background_text};
+      background: ${(props) => transparentize(0.95, props.theme.colors.background_text)};
+
+      .MuiButton-label {
+        font-size: 0.9rem;
+        text-transform: capitalize;
+      }
+
+      &.selected {
+        border-color: ${(props) =>
+          transparentize(0.75, props.theme.colors.background_dt)};
+      }
+    }
+  }
+
+  @media (max-width: 375px) {
+    > div {
+      display: flex;
+      justify-content: center;
+
+      .MuiButton-root {
+        padding: 8px 8.5px 6px;
+        border-radius: 50%;
+
+        .MuiButton-label {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+`;

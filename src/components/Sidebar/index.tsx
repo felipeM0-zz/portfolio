@@ -22,7 +22,7 @@ interface SidebarProps {
 }
 
 const Sidebar = (props: SidebarProps) => {
-  const width = useWidth();
+  const width = useWidth(768);
   const loc = useLocation().pathname;
 
   const Options: React.FC<OptionsProps> = ({ route, icon, text }) => (
