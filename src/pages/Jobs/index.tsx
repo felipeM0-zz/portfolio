@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactPlayer from "react-player";
 // UTILS
 import { useWidth } from "../../utils/useSizeScreen";
 // COMPONENTS
@@ -12,28 +13,43 @@ import Grid from "@material-ui/core/Grid";
 import CardHeader from "@material-ui/core/CardHeader";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogTitle from "@material-ui/core/DialogTitle";
 // INTERFACES
-import { BtnFilterProps, HeaderWithFilterProps } from "./interfaces";
+import { BtnFilterProps, HeaderWithFilterProps, VideoModalProps } from "./interfaces";
 // DATA
 import { Data } from "./utils/dataRecover";
 // ICONS
 import { BsFillCameraVideoFill } from "react-icons/bs";
-import { RiExternalLinkFill } from "react-icons/ri";
+import { RiExternalLinkFill, RiCloseLine } from "react-icons/ri";
 import { FaMobileAlt, FaDesktop } from "react-icons/fa";
 import { BiDevices } from "react-icons/bi";
 // STYLES
-import { Container, GridItem, SpanTec, HeaderFilter, TooltipSpan } from "./styles";
+import {
+  Container,
+  GridItem,
+  SpanTec,
+  HeaderFilter,
+  TooltipSpan,
+  ModalVideoJob,
+} from "./styles";
 
 const Jobs = () => {
   const width = useWidth(425);
+  // STATE HOOKS
   const [typeComplete, setTypeComplete] = useState("Todos");
   const [typeIncomplete, setTypeIncomplete] = useState("Todos");
+  const [videoModal, setVideoModal] = useState<VideoModalProps>({
+    state: false,
+  });
 
+  // SET TARGET FILTER
   const VTarget = (target: string, desc: string) => {
     let complete = desc === "Completo";
     complete ? setTypeComplete(target) : setTypeIncomplete(target);
   };
 
+  // SET CLASS SELECTED
   const setClass = (target: string, desc: string) => {
     let complete = desc === "Completo";
 
@@ -43,6 +59,7 @@ const Jobs = () => {
       : "";
   };
 
+  // BUTTON FILTER
   const BtnFilter: React.FC<BtnFilterProps> = ({ desc, target, icon }) => {
     return (
       <Button className={setClass(target, desc)} onClick={() => VTarget(target, desc)}>
@@ -51,6 +68,7 @@ const Jobs = () => {
     );
   };
 
+  // HEADER FILTER
   const HeaderWithFilter: React.FC<HeaderWithFilterProps> = ({ desc }) => {
     return (
       <HeaderFilter>
@@ -93,13 +111,12 @@ const Jobs = () => {
                       {e.tec.map((e, i) => {
                         return (
                           <TooltipSpan
-                            placement="top"
                             arrow
+                            key={i}
+                            placement="top"
                             title={<img width={50} height={50} src={e[4]} alt={e[0]} />}
                           >
-                            <SpanTec key={i} color={e[1]}>
-                              {e[0]}
-                            </SpanTec>
+                            <SpanTec color={e[1]}>{e[0]}</SpanTec>
                           </TooltipSpan>
                         );
                       })}
@@ -114,7 +131,18 @@ const Jobs = () => {
                       </Button>
                     )}
                     {e.src.vid[0] && (
-                      <Button endIcon={<BsFillCameraVideoFill />}>Vídeo</Button>
+                      <Button
+                        onClick={() => {
+                          setVideoModal({
+                            state: true,
+                            link: e.src.vid[0],
+                            name: e.name,
+                          });
+                        }}
+                        endIcon={<BsFillCameraVideoFill />}
+                      >
+                        Vídeo
+                      </Button>
                     )}
                   </CardActions>
                 </Card>
@@ -181,6 +209,20 @@ const Jobs = () => {
         name_previous="Tecnologias"
         previous="tecnologies"
       />
+
+      {/* MODAL VIDEO */}
+      <ModalVideoJob
+        open={videoModal.state}
+        onClose={() => setVideoModal({ state: false })}
+      >
+        <DialogTitle>
+          <span>{videoModal.name}</span>
+          <RiCloseLine onClick={() => setVideoModal({ state: false })} />
+        </DialogTitle>
+        <DialogContent>
+          <ReactPlayer url={videoModal.link} controls width="inherit" height="inherit" />
+        </DialogContent>
+      </ModalVideoJob>
     </React.Fragment>
   );
 };

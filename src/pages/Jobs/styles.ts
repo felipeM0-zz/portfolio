@@ -6,9 +6,11 @@ import Tooltip from "@material-ui/core/Tooltip";
 import { withStyles } from "@material-ui/core/styles";
 // INTERFACES
 import { StylesProps } from "./interfaces";
+import { Dialog } from "@material-ui/core";
 
 export const Container = styled.div``;
 
+// GRID
 export const GridItem = styled(Grid).attrs((props: StylesProps) => ({
   link: props.link,
 }))`
@@ -84,9 +86,11 @@ export const GridItem = styled(Grid).attrs((props: StylesProps) => ({
   }
 `;
 
+// SPAN TECS
 export const SpanTec = styled("span").attrs((props: StylesProps) => ({
   color: props.color,
 }))`
+  cursor: pointer;
   font-size: 0.8rem;
   border-radius: 4px;
   transition: all 0.3s;
@@ -99,6 +103,7 @@ export const SpanTec = styled("span").attrs((props: StylesProps) => ({
     transparentize(props.theme.title === "dark" ? 0.8 : 0.15, props.color)};
 `;
 
+// TOOLTIPS
 export const TooltipSpan = withStyles({
   tooltip: {
     backgroundColor: "#333",
@@ -108,6 +113,45 @@ export const TooltipSpan = withStyles({
   },
 })(Tooltip);
 
+// MODAL VIDEO DIALOG
+export const ModalVideoJob = styled(Dialog)`
+  .MuiDialog-paper {
+    .MuiDialogTitle-root {
+      h2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .MuiDialogContent-root {
+      padding: 3px 0 0;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .MuiDialog-paper {
+      transition: all 0.4s;
+      margin: 0;
+      height: 100%;
+      max-width: 100%;
+      border-radius: 0;
+      max-height: 100%;
+
+      .MuiDialogContent-root {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+`;
+
+// HEADER FILTER DEVICES
 export const HeaderFilter = styled("div")`
   margin: 1rem 1rem 0;
 

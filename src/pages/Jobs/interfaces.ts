@@ -12,3 +12,9 @@ export interface StylesProps {
   link: string;
   color: string;
 }
+
+export interface VideoModalProps {
+  state: boolean;
+  link?: string;
+  name?: string;
+}
