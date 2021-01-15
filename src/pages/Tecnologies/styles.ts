@@ -15,7 +15,7 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     .MuiGrid-container {
-      padding: 0.2rem;
+      padding: 0.7rem 0.2rem 0.2rem;
     }
   }
 `;

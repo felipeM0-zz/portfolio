@@ -4,6 +4,7 @@ import Lottie from "react-lottie";
 import { ElementProps } from "./interfaces";
 // COMPONENTS
 import Footer from "../../components/Footer";
+import TitlePage from "../../components/TitlePage";
 // OBJECTS LOTTIE
 import about from "../../images/lottie/about.json";
 import studies from "../../images/lottie/studies.json";
@@ -31,6 +32,7 @@ const About = () => {
 
   return (
     <React.Fragment>
+      <TitlePage title="Sobre mim" />
       <Container>
         <Element
           animation={about}

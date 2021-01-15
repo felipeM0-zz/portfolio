@@ -4,6 +4,7 @@ import Particles from "react-particles-js";
 import { GridItemProps } from "./interfaces";
 // COMPONENTS
 import Footer from "../../components/Footer";
+import TitlePage from "../../components/TitlePage";
 // MATERIAL UI
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
@@ -37,6 +38,7 @@ const Tecnologies = () => {
 
   return (
     <React.Fragment>
+      <TitlePage title="Tecnologias" />
       <Container>
         <Particles {...sizes} params={params} />
 

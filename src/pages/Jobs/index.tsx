@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 // UTILS
 import { useWidth } from "../../utils/useSizeScreen";
 // COMPONENTS
+import TitlePage from "../../components/TitlePage";
 import Footer from "../../components/Footer";
 // MATERIAL UI - COMPONENTS
 import Card from "@material-ui/core/Card";
@@ -84,6 +85,7 @@ const Jobs = () => {
 
   return (
     <React.Fragment>
+      <TitlePage title="Meus trabalhos" />
       <Container>
         {/* COMPLETO */}
 
@@ -167,7 +169,7 @@ const Jobs = () => {
                   <CardHeader title={e.name} />
                   {e.src.img[0] && <img src={e.src.img[0]} alt={e.name} />}
                   <CardContent>
-                    <Typography component="p">{e.abs}</Typography>
+                    <p>{e.abs}</p>
                     <Divider />
                     <div className="type">
                       <span>{e.type}</span>
@@ -177,9 +179,14 @@ const Jobs = () => {
                     <div className="tecs">
                       {e.tec.map((e, i) => {
                         return (
-                          <SpanTec key={i} color={e[1]}>
-                            {e[0]}
-                          </SpanTec>
+                          <TooltipSpan
+                            arrow
+                            key={i}
+                            placement="top"
+                            title={<img width={50} height={50} src={e[4]} alt={e[0]} />}
+                          >
+                            <SpanTec color={e[1]}>{e[0]}</SpanTec>
+                          </TooltipSpan>
                         );
                       })}
                     </div>

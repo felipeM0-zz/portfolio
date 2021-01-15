@@ -8,6 +8,9 @@ import { withStyles } from "@material-ui/core/styles";
 import { StylesProps } from "./interfaces";
 import { Dialog } from "@material-ui/core";
 
+// ------------------------------------------
+
+// CONTAINER
 export const Container = styled.div``;
 
 // GRID
@@ -28,14 +31,16 @@ export const GridItem = styled(Grid).attrs((props: StylesProps) => ({
     .MuiCardHeader-root {
       .MuiCardHeader-content {
         span {
+          font-weight: bold;
           transition: all 0.4s;
+          font-family: "Poiret One", cursive;
           color: ${(props) => props.theme.colors.background_text};
         }
       }
     }
 
     .MuiCardContent-root {
-      .MuiTypography-root {
+      p:first-child {
         transition: all 0.4s;
         color: ${(props) => props.theme.colors.background_text};
       }
@@ -153,13 +158,15 @@ export const ModalVideoJob = styled(Dialog)`
 
 // HEADER FILTER DEVICES
 export const HeaderFilter = styled("div")`
-  margin: 1rem 1rem 0;
+  margin: 1.5rem 1rem 1rem;
 
   > p {
-    font-size: 2.1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
     text-align: center;
     margin-bottom: 0.5rem;
-    color: ${(props) => props.theme.colors.background_text};
+    font-family: "Poiret One", cursive;
+    color: ${(props) => props.theme.colors.background_dt};
   }
 
   > div {
