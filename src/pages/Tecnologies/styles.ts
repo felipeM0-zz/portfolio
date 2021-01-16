@@ -1,14 +1,19 @@
 import styled from "styled-components";
+// MATERIAL UI
 import Grid from "@material-ui/core/Grid";
+// PARTICLES
+import Particles from "react-particles-js";
 
-export const Container = styled.div`
-  #tsparticles canvas {
+export const ParticlesTec = styled(Particles)`
+  canvas {
     z-index: -1;
     width: 100%;
     height: 100%;
     position: fixed;
   }
+`;
 
+export const Container = styled.div`
   .MuiGrid-container {
     padding: 0.7rem;
   }
@@ -57,16 +62,27 @@ export const GridItem = styled(Grid).attrs((props) => ({
         display: flex;
         font-size: 1.3rem;
         justify-content: flex-end;
-        font-family: "Architects Daughter", cursive;
+        font-family: "Poiret One", cursive;
+        letter-spacing: 1px;
 
         a {
+          display: flex;
+          align-items: center;
           padding: 0 0.5rem;
           font-weight: bold;
-          border-radius: 4px;
           text-decoration: none;
           color: ${(props) => props.color};
           text-shadow: 1px 1px 1px
             ${(props) => (props.theme.title === "dark" ? "#262626" : "#808080")};
+
+          span {
+            margin-right: 0.3rem;
+          }
+
+          svg {
+            margin-top: 5px;
+            font-size: 0.8rem;
+          }
         }
       }
 

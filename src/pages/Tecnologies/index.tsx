@@ -1,5 +1,4 @@
 import React from "react";
-import Particles from "react-particles-js";
 // INTERFACES
 import { GridItemProps } from "./interfaces";
 // COMPONENTS
@@ -12,8 +11,10 @@ import CardMedia from "@material-ui/core/CardMedia";
 // DATA GRID/PARTICLES
 import { params, sizes } from "./utils/particlesParams";
 import { dataGridItem } from "./utils/dataGridItem";
+// ICONS
+import { FiExternalLink } from "react-icons/fi";
 // STYLES
-import { Container, GridItem } from "./styles";
+import { Container, GridItem, ParticlesTec } from "./styles";
 
 const Tecnologies = () => {
   const GridContainer: React.FC<GridItemProps> = ({ img, text, link, name, color }) => {
@@ -26,7 +27,8 @@ const Tecnologies = () => {
           <div>
             <span>
               <a rel="noreferrer" target="_blank" href={link}>
-                {name}
+                <span>{name}</span>
+                <FiExternalLink />
               </a>
             </span>
             <p>{text}</p>
@@ -38,10 +40,9 @@ const Tecnologies = () => {
 
   return (
     <React.Fragment>
+      <ParticlesTec {...sizes} params={params} />
       <TitlePage title="Tecnologias" />
       <Container>
-        <Particles {...sizes} params={params} />
-
         <Grid container>
           {dataGridItem.map((dt, i) => {
             return (

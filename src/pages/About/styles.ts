@@ -33,14 +33,13 @@ export const Container = styled.div`
     }
 
     p {
-      padding: 0 1rem;
       flex: 1;
-      font-size: 1.6rem;
+      padding: 0 1rem;
       line-height: 1.6;
       margin-left: 2rem;
-      color: ${(props) => props.theme.colors.background_text};
-      font-family: "Architects Daughter", cursive;
       transition: all 0.3s;
+      font: bold 1.7rem "Poiret One", cursive;
+      color: ${(props) => props.theme.colors.background_text};
     }
   }
 
