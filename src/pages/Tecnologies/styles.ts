@@ -67,21 +67,22 @@ export const GridItem = styled(Grid).attrs((props) => ({
 
         a {
           display: flex;
-          align-items: center;
           padding: 0 0.5rem;
           font-weight: bold;
+          align-items: center;
           text-decoration: none;
-          color: ${(props) => props.color};
           text-shadow: 1px 1px 1px
             ${(props) => (props.theme.title === "dark" ? "#262626" : "#808080")};
 
           span {
             margin-right: 0.3rem;
+            color: ${(props) => props.color};
           }
 
           svg {
+            opacity: 0.5;
             margin-top: 5px;
-            font-size: 0.8rem;
+            color: ${(props) => props.color};
           }
         }
       }

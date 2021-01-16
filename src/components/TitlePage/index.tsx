@@ -4,10 +4,11 @@ import { TitlePageProps } from "./interfaces";
 // STYLES
 import { Container } from "./styles";
 
-const TitlePage: React.FC<TitlePageProps> = ({ title }) => {
+const TitlePage: React.FC<TitlePageProps> = ({ title, sub }) => {
   return (
     <Container>
       <p>{title}</p>
+      <span>{sub}</span>
     </Container>
   );
 };

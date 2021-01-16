@@ -12,7 +12,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import { params, sizes } from "./utils/particlesParams";
 import { dataGridItem } from "./utils/dataGridItem";
 // ICONS
-import { FiExternalLink } from "react-icons/fi";
+import { CgExternal } from "react-icons/cg";
 // STYLES
 import { Container, GridItem, ParticlesTec } from "./styles";
 
@@ -28,7 +28,7 @@ const Tecnologies = () => {
             <span>
               <a rel="noreferrer" target="_blank" href={link}>
                 <span>{name}</span>
-                <FiExternalLink />
+                <CgExternal />
               </a>
             </span>
             <p>{text}</p>
@@ -41,7 +41,7 @@ const Tecnologies = () => {
   return (
     <React.Fragment>
       <ParticlesTec {...sizes} params={params} />
-      <TitlePage title="Tecnologias" />
+      <TitlePage title="Tecnologias" sub="Utilizadas por mim" />
       <Container>
         <Grid container>
           {dataGridItem.map((dt, i) => {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
+import Lottie from "react-lottie";
 // UTILS
 import { useWidth } from "../../utils/useSizeScreen";
 // COMPONENTS
@@ -20,6 +21,9 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import { BtnFilterProps, HeaderWithFilterProps, VideoModalProps } from "./interfaces";
 // DATA
 import { Data } from "./utils/dataRecover";
+// OBJECTS JSON
+import Success from "../../images/lottie/success.json";
+import Coding from "../../images/lottie/coding.json";
 // ICONS
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { RiExternalLinkFill, RiCloseLine } from "react-icons/ri";
@@ -46,13 +50,13 @@ const Jobs = () => {
 
   // SET TARGET FILTER
   const VTarget = (target: string, desc: string) => {
-    let complete = desc === "Completo";
+    let complete = desc === "Completos";
     complete ? setTypeComplete(target) : setTypeIncomplete(target);
   };
 
   // SET CLASS SELECTED
   const setClass = (target: string, desc: string) => {
-    let complete = desc === "Completo";
+    let complete = desc === "Completos";
 
     return (complete && typeComplete === target) ||
       (!complete && typeIncomplete === target)
@@ -71,9 +75,24 @@ const Jobs = () => {
 
   // HEADER FILTER
   const HeaderWithFilter: React.FC<HeaderWithFilterProps> = ({ desc }) => {
+    let anim = desc === "Completos" ? Success : Coding;
+
     return (
       <HeaderFilter>
-        <p>{desc}</p>
+        <div>
+          <p>{desc}</p>
+
+          <Lottie
+            options={{
+              loop: true,
+              autoplay: true,
+              animationData: anim,
+              rendererSettings: { preserveAspectRatio: "xMidYMid slice" },
+            }}
+            isClickToPauseDisabled={true}
+          />
+        </div>
+
         <div>
           <BtnFilter desc={desc} target="Todos" icon={<BiDevices />} />
           <BtnFilter desc={desc} target="Web" icon={<FaDesktop />} />
@@ -89,11 +108,11 @@ const Jobs = () => {
       <Container>
         {/* COMPLETO */}
 
-        <HeaderWithFilter desc="Completo" />
+        <HeaderWithFilter desc="Completos" />
         <Grid container>
           {Data.filter(
             (e) =>
-              e.sts === "Completo" &&
+              e.sts === "Completos" &&
               (typeComplete !== "Todos" ? e.type === typeComplete : e.type !== "Todos")
           ).map((e, i) => {
             return (
@@ -154,11 +173,11 @@ const Jobs = () => {
         </Grid>
 
         {/* INCOMPLETO */}
-        <HeaderWithFilter desc="Incompleto" />
+        <HeaderWithFilter desc="Em Progresso" />
         <Grid container>
           {Data.filter(
             (e) =>
-              e.sts === "Incompleto" &&
+              e.sts === "Em Progresso" &&
               (typeIncomplete !== "Todos"
                 ? e.type === typeIncomplete
                 : e.type !== "Todos")

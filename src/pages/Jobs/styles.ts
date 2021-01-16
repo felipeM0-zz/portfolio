@@ -160,16 +160,28 @@ export const ModalVideoJob = styled(Dialog)`
 export const HeaderFilter = styled("div")`
   margin: 1.5rem 1rem 1rem;
 
-  > p {
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    font-family: "Poiret One", cursive;
-    color: ${(props) => props.theme.colors.background_dt};
+  div:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+
+    > p {
+      font-size: 1.4rem;
+      font-weight: bold;
+      font-family: "Poiret One", cursive;
+      color: ${(props) => props.theme.colors.background_dt};
+    }
+
+    > div {
+      width: 60px !important;
+      height: 60px !important;
+      margin: initial !important;
+    }
   }
 
-  > div {
+  div:nth-child(2) {
     .MuiButton-root {
       min-width: auto;
       padding: 4px 6px;

@@ -12,7 +12,7 @@ import challvd from "../src/webchallenge/webchallengevideo.mp4";
 export const Data = [
   {
     type: "Web",
-    sts: "Completo",
+    sts: "Completos",
     name: "Info Movies",
     src: { img: [info1, info2], vid: [infovd] },
     tec: [
@@ -30,7 +30,7 @@ export const Data = [
   },
   {
     type: "Web",
-    sts: "Completo",
+    sts: "Completos",
     name: "Build Box - Web Challenge",
     src: { img: [chall1, chall2], vid: [challvd] },
     tec: [
@@ -50,7 +50,7 @@ export const Data = [
   {
     link: "",
     type: "Web",
-    sts: "Completo",
+    sts: "Completos",
     name: "Projeto Gaia",
     src: { img: [], vid: [] },
     tec: [
@@ -71,7 +71,7 @@ export const Data = [
   {
     link: "",
     type: "Mobile",
-    sts: "Completo",
+    sts: "Completos",
     name: "Block Age",
     src: { img: [], vid: [] },
     tec: [
@@ -89,7 +89,7 @@ export const Data = [
   {
     link: "",
     type: "Mobile",
-    sts: "Incompleto",
+    sts: "Em Progresso",
     name: "Water Call Me",
     src: { img: [], vid: [] },
     tec: [
@@ -104,7 +104,7 @@ export const Data = [
   {
     link: "",
     type: "Web",
-    sts: "Incompleto",
+    sts: "Em Progresso",
     name: "Eater",
     src: { img: [], vid: [] },
     tec: [
