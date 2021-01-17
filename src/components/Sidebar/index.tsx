@@ -51,7 +51,16 @@ const Sidebar = (props: SidebarProps) => {
       </div>
 
       <div>
-        <Switch />
+        <div>
+          <div />
+          <p>Preferências</p>
+          <div />
+        </div>
+
+        <div>
+          <span>Escuro</span>
+          <Switch />
+        </div>
       </div>
     </Container>
   );

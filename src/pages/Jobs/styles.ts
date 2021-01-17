@@ -41,7 +41,9 @@ export const GridItem = styled(Grid).attrs((props: StylesProps) => ({
 
     .MuiCardContent-root {
       p:first-child {
+        margin-bottom: 1rem;
         transition: all 0.4s;
+        font: bold 1rem "Poiret One", cursive;
         color: ${(props) => props.theme.colors.background_text};
       }
 
@@ -191,8 +193,9 @@ export const HeaderFilter = styled("div")`
       background: ${(props) => transparentize(0.95, props.theme.colors.background_text)};
 
       .MuiButton-label {
-        font-size: 0.9rem;
+        margin-top: 0.1rem;
         text-transform: capitalize;
+        font: normal 0.8rem "Balsamiq Sans", cursive;
       }
 
       &.selected {

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { transparentize } from "polished";
 // MATERIAL UI
 import Grid from "@material-ui/core/Grid";
 // PARTICLES
@@ -60,19 +61,19 @@ export const GridItem = styled(Grid).attrs((props) => ({
 
       span {
         display: flex;
-        font-size: 1.3rem;
         justify-content: flex-end;
-        font-family: "Poiret One", cursive;
-        letter-spacing: 1px;
+        font: bold 1.3rem "Poiret One", cursive;
 
         a {
+          transition: all 0.4s;
+
           display: flex;
-          padding: 0 0.5rem;
-          font-weight: bold;
+          padding: 0.2rem 0.5rem 0.2rem 0.7rem;
+          border-radius: 4px;
           align-items: center;
           text-decoration: none;
-          text-shadow: 1px 1px 1px
-            ${(props) => (props.theme.title === "dark" ? "#262626" : "#808080")};
+          text-shadow: ${(props) =>
+            props.theme.title === "dark" ? "1px 1px 1px #2b2b2b" : "none"};
 
           span {
             margin-right: 0.3rem;
@@ -80,8 +81,7 @@ export const GridItem = styled(Grid).attrs((props) => ({
           }
 
           svg {
-            opacity: 0.5;
-            margin-top: 5px;
+            margin-top: 0.1rem;
             color: ${(props) => props.color};
           }
         }
@@ -93,7 +93,7 @@ export const GridItem = styled(Grid).attrs((props) => ({
         margin-top: 0.8rem;
         margin-bottom: 0.8rem;
         transition: all 0.3s;
-        color: ${(props) => props.theme.colors.background_text};
+        color: ${(props) => transparentize(0.3, props.theme.colors.background_text)};
       }
     }
 

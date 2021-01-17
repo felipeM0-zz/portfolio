@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   button,
   label,
   textarea {
-    font: 400 1rem Quicksand Pro, sans-serif !important;
+    font: 400 1rem 'Balsamiq Sans', cursive !important;
   }
 `;
 

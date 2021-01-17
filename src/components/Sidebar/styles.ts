@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Drawer from "@material-ui/core/Drawer";
-import { setLightness } from "polished";
+import { transparentize } from "polished";
 
 export const Container = styled(Drawer)`
   .MuiDrawer-paper {
@@ -26,7 +26,7 @@ export const Container = styled(Drawer)`
             background: ${(props) =>
               props.theme.title === "dark"
                 ? props.theme.colors.background_darker
-                : setLightness(0.91, props.theme.colors.background_darker)};
+                : transparentize(0.3, props.theme.colors.background_darker)};
           }
 
           .MuiButton-label {
@@ -37,9 +37,10 @@ export const Container = styled(Drawer)`
             }
 
             > span:nth-child(2) {
-              display: flex;
               flex: 1;
+              display: flex;
               justify-content: center;
+              font: bold 1rem "Poiret One", cursive;
             }
           }
         }
@@ -48,9 +49,48 @@ export const Container = styled(Drawer)`
 
     > div:nth-child(2) {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
       padding: 1rem;
+
+      > div:nth-child(1) {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        > p {
+          font-size: 0.7rem;
+          color: ${(props) => transparentize(0.6, props.theme.colors.background_text)};
+        }
+
+        > div {
+          flex: 1;
+          height: 2px;
+          display: flex;
+          background-color: ${(props) =>
+            transparentize(0.95, props.theme.colors.background_text)};
+        }
+
+        > div:nth-child(1) {
+          margin-right: 0.3rem;
+        }
+
+        > div:nth-child(3) {
+          margin-left: 0.3rem;
+        }
+      }
+
+      > div:nth-child(2) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0 0 0;
+
+        span {
+          font-size: 0.8rem;
+          color: ${(props) => transparentize(0.3, props.theme.colors.background_text)};
+        }
+      }
     }
   }
 `;
