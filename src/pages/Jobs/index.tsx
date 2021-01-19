@@ -135,9 +135,11 @@ const Jobs = () => {
                             arrow
                             key={i}
                             placement="top"
-                            title={<img width={50} height={50} src={e[4]} alt={e[0]} />}
+                            title={
+                              <img width={50} height={50} src={e.img} alt={e.name} />
+                            }
                           >
-                            <SpanTec color={e[1]}>{e[0]}</SpanTec>
+                            <SpanTec color={e.color}>{e.name}</SpanTec>
                           </TooltipSpan>
                         );
                       })}
@@ -202,9 +204,11 @@ const Jobs = () => {
                             arrow
                             key={i}
                             placement="top"
-                            title={<img width={50} height={50} src={e[4]} alt={e[0]} />}
+                            title={
+                              <img width={50} height={50} src={e.img} alt={e.name} />
+                            }
                           >
-                            <SpanTec color={e[1]}>{e[0]}</SpanTec>
+                            <SpanTec color={e.color}>{e.name}</SpanTec>
                           </TooltipSpan>
                         );
                       })}

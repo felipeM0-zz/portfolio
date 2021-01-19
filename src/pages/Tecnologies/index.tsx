@@ -8,9 +8,10 @@ import TitlePage from "../../components/TitlePage";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
+import Skeleton from "@material-ui/lab/Skeleton";
 // DATA GRID/PARTICLES
 import { params, sizes } from "./utils/particlesParams";
-import { dataGridItem } from "./utils/dataGridItem";
+import { Tecs } from "./utils/dataTecs";
 // ICONS
 import { CgExternal } from "react-icons/cg";
 // STYLES
@@ -22,7 +23,7 @@ const Tecnologies = () => {
       <GridItem item md={4} sm={6} xs={12} color={color}>
         <Card>
           <CardMedia>
-            <img src={img} alt={name} />
+            {img ? <img src={img} alt={name} /> : <Skeleton variant="rect" />}
           </CardMedia>
           <div>
             <span>
@@ -44,12 +45,12 @@ const Tecnologies = () => {
       <TitlePage title="Tecnologias" sub="Utilizadas por mim" />
       <Container>
         <Grid container>
-          {dataGridItem.map((dt, i) => {
+          {Tecs.map((dt, i) => {
             return (
               <GridContainer
                 key={i}
                 img={dt.img}
-                text={dt.text}
+                text={dt.desc}
                 link={dt.link}
                 name={dt.name}
                 color={dt.color}

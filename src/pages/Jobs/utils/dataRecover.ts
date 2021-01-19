@@ -16,14 +16,14 @@ export const Data = [
     name: "Info Movies",
     src: { img: [info1, info2], vid: [infovd] },
     tec: [
-      Tecs.c_react,
-      Tecs.c_js,
-      Tecs.c_css,
-      Tecs.c_axios,
-      Tecs.c_lottie,
-      Tecs.c_sass,
-      Tecs.c_materialui,
-      Tecs.c_html,
+      Tecs[19], // REACT
+      Tecs[7], // JS
+      Tecs[2], // CSS
+      Tecs[0], // AXIOS
+      Tecs[8], // LOTIE
+      Tecs[21], // SASS
+      Tecs[9], // MATERIAL UI
+      Tecs[5], // HTML
     ],
     link: "https://infomovies.netlify.app",
     abs: "Site para buscar de filmes e séries através do consumo de API.",
@@ -34,14 +34,14 @@ export const Data = [
     name: "Build Box - Web Challenge",
     src: { img: [chall1, chall2], vid: [challvd] },
     tec: [
-      Tecs.c_react,
-      Tecs.c_js,
-      Tecs.c_css,
-      Tecs.c_typescript,
-      Tecs.c_styled,
-      Tecs.c_materialui,
-      Tecs.c_react_icons,
-      Tecs.c_html,
+      Tecs[19], // REACT
+      Tecs[7], // JS
+      Tecs[2], // CSS
+      Tecs[24], // TYPESCRIPT
+      Tecs[22], // STYLED
+      Tecs[9], // MATERIAL UI
+      Tecs[14], // REACT ICONS
+      Tecs[5], // HTML
     ],
     link: "https://web-challenge.netlify.app/",
     abs:
@@ -54,16 +54,16 @@ export const Data = [
     name: "Projeto Gaia",
     src: { img: [], vid: [] },
     tec: [
-      Tecs.c_react,
-      Tecs.c_js,
-      Tecs.c_css,
-      Tecs.c_axios,
-      Tecs.c_reactbt,
-      Tecs.c_react_icons,
-      Tecs.c_sass,
-      Tecs.c_sweetalert,
-      Tecs.c_typescript,
-      Tecs.c_html,
+      Tecs[19], // REACT
+      Tecs[7], // JS
+      Tecs[2], // CSS
+      Tecs[0], // AXIOS
+      Tecs[13], // REACT BOOTSTRAP
+      Tecs[14], // REACT ICONS
+      Tecs[21], // SASS
+      Tecs[23], // SWEETALERT
+      Tecs[24], // TYPESCRIPT
+      Tecs[5], // HTML
     ],
     abs:
       "FrontEnd Gaia para criação, exclusão, atualização e leitura de dados consumidos por sua API.",
@@ -75,13 +75,13 @@ export const Data = [
     name: "Block Age",
     src: { img: [], vid: [] },
     tec: [
-      Tecs.c_react_native,
-      Tecs.c_js,
-      Tecs.c_css,
-      Tecs.c_redux,
-      Tecs.c_styled,
-      Tecs.c_react_navigation,
-      Tecs.c_lottie,
+      Tecs[16], // REACT NATIVE
+      Tecs[7], // JS
+      Tecs[2], // CSS
+      Tecs[20], // REDUX
+      Tecs[22], // STYLED
+      Tecs[17], // REACT NAVIGATION
+      Tecs[8], // LOTTIE
     ],
     abs:
       "Aplicativo Android para criação e gestão de listas de tarefas e notas personalizadas.",
@@ -93,11 +93,11 @@ export const Data = [
     name: "Water Call Me",
     src: { img: [], vid: [] },
     tec: [
-      Tecs.c_react_native,
-      Tecs.c_js,
-      Tecs.c_css,
-      Tecs.c_react_navigation,
-      Tecs.c_lottie,
+      Tecs[16], // REACT NATIVE
+      Tecs[7], // JS
+      Tecs[2], // CSS
+      Tecs[17], // REACT NAVIGATION
+      Tecs[8], // LOTTIE
     ],
     abs: "Aplicativo Android focado em saúde, notificações push, e lembretes periódicos.",
   },
@@ -108,14 +108,14 @@ export const Data = [
     name: "Eater",
     src: { img: [], vid: [] },
     tec: [
-      Tecs.c_react,
-      Tecs.c_js,
-      Tecs.c_css,
-      Tecs.c_html,
-      Tecs.c_materialui,
-      Tecs.c_react_leaflet,
-      Tecs.c_react_router,
-      Tecs.c_sweetalert,
+      Tecs[19], // REACT
+      Tecs[7], // JS
+      Tecs[2], // CSS
+      Tecs[5], // HTML
+      Tecs[9], // MATERIAL UI
+      Tecs[15], // REACT LEAFLET
+        Tecs[18], // REACT ROUTER
+      Tecs[23], // SWEETALERT
     ],
     abs:
       "Projeto web com foco e-commerce, distribuição e encontro de locais com objetivo alimentício.",

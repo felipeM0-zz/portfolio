@@ -77,6 +77,11 @@ export const sizes: PropsSizes = {
   height: "100vh",
 };
 
+const hw = {
+  height: 25,
+  width: 25,
+};
+
 export const params: PropsParams = {
   particles: {
     number: {
@@ -98,136 +103,32 @@ export const params: PropsParams = {
     shape: {
       type: ["image"],
       image: [
-        {
-          src: Tecs.c_csharp[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_css[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_git[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_github[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_html[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_jquery[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_js[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_materialize[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_materialui[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_mysql[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_nodejs[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_react[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_react_native[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_reactbt[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_redux[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_sass[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_styled[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_typescript[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_unity[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_lottie[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_axios[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_react_icons[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_sweetalert[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_react_router[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_react_navigation[4],
-          height: 25,
-          width: 25,
-        },
-        {
-          src: Tecs.c_react_leaflet[4],
-          height: 25,
-          width: 25,
-        },
+        { src: Tecs[0].img, ...hw },
+        { src: Tecs[1].img, ...hw },
+        { src: Tecs[2].img, ...hw },
+        { src: Tecs[3].img, ...hw },
+        { src: Tecs[4].img, ...hw },
+        { src: Tecs[5].img, ...hw },
+        { src: Tecs[6].img, ...hw },
+        { src: Tecs[7].img, ...hw },
+        { src: Tecs[8].img, ...hw },
+        { src: Tecs[9].img, ...hw },
+        { src: Tecs[10].img, ...hw },
+        { src: Tecs[11].img, ...hw },
+        { src: Tecs[12].img, ...hw },
+        { src: Tecs[12].img, ...hw },
+        { src: Tecs[14].img, ...hw },
+        { src: Tecs[15].img, ...hw },
+        { src: Tecs[16].img, ...hw },
+        { src: Tecs[17].img, ...hw },
+        { src: Tecs[18].img, ...hw },
+        { src: Tecs[19].img, ...hw },
+        { src: Tecs[20].img, ...hw },
+        { src: Tecs[21].img, ...hw },
+        { src: Tecs[22].img, ...hw },
+        { src: Tecs[23].img, ...hw },
+        { src: Tecs[24].img, ...hw },
+        { src: Tecs[25].img, ...hw },
       ],
     },
     opacity: {

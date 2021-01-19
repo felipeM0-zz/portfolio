@@ -52,6 +52,15 @@ export const GridItem = styled(Grid).attrs((props) => ({
         width: 80px;
         height: 80px;
       }
+
+      span {
+        width: 70px;
+        height: 70px;
+        margin: 0 1rem 0 0.4rem;
+        border-radius: 4px;
+        background: ${(props) =>
+          transparentize(0.75, typeof props.color === "string" ? props.color : "")};
+      }
     }
 
     > div:nth-child(2) {
@@ -68,7 +77,7 @@ export const GridItem = styled(Grid).attrs((props) => ({
           transition: all 0.4s;
 
           display: flex;
-          padding: 0.2rem 0.5rem 0.2rem 0.7rem;
+          padding: 0.2rem 0.5rem 0.2rem 0;
           border-radius: 4px;
           align-items: center;
           text-decoration: none;
@@ -114,6 +123,12 @@ export const GridItem = styled(Grid).attrs((props) => ({
         img {
           width: 50px;
           height: 50px;
+        }
+
+        span {
+          width: 40px;
+          height: 40px;
+          margin: 0.3rem 0 0 0.4rem;
         }
       }
     }
