@@ -1,7 +1,7 @@
 export interface GridItemProps {
-  img: string;
-  text: string;
+  color: string;
+  desc: string;
   link: string;
   name: string;
-  color: string;
+  img: string;
 }

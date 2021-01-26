@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 // INTERFACES
 import { GridItemProps } from "./interfaces";
 // COMPONENTS
@@ -11,14 +11,34 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Skeleton from "@material-ui/lab/Skeleton";
 // DATA GRID/PARTICLES
 import { params, sizes } from "./utils/particlesParams";
-import { Tecs } from "./utils/dataTecs";
 // ICONS
 import { CgExternal } from "react-icons/cg";
 // STYLES
 import { Container, GridItem, ParticlesTec } from "./styles";
 
+import { getDataTec } from "../../services/requestData";
+import { LoadingGrid } from "./components/LoadingGrid";
+
 const Tecnologies = () => {
-  const GridContainer: React.FC<GridItemProps> = ({ img, text, link, name, color }) => {
+  const [datas, setDatas] = useState<GridItemProps[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const getDatas = useCallback(async () => {
+    try {
+      await getDataTec().then((res) => {
+        setDatas(res);
+        setLoading(false);
+      });
+    } catch (error) {
+      console.log("ERRO: " + error);
+    }
+  }, []);
+
+  useEffect(() => {
+    getDatas();
+  }, [getDatas]);
+
+  const GridContainer: React.FC<GridItemProps> = ({ img, desc, link, name, color }) => {
     return (
       <GridItem item md={4} sm={6} xs={12} color={color}>
         <Card>
@@ -32,7 +52,7 @@ const Tecnologies = () => {
                 <CgExternal />
               </a>
             </span>
-            <p>{text}</p>
+            <p>{desc}</p>
           </div>
         </Card>
       </GridItem>
@@ -45,18 +65,22 @@ const Tecnologies = () => {
       <TitlePage title="Tecnologias" sub="Utilizadas por mim" />
       <Container>
         <Grid container>
-          {Tecs.map((dt, i) => {
-            return (
-              <GridContainer
-                key={i}
-                img={dt.img}
-                text={dt.desc}
-                link={dt.link}
-                name={dt.name}
-                color={dt.color}
-              />
-            );
-          })}
+          {loading ? (
+            <LoadingGrid />
+          ) : (
+            Object.values(datas).map((dt, i) => {
+              return (
+                <GridContainer
+                  key={i}
+                  img={dt.img}
+                  desc={dt.desc}
+                  link={dt.link}
+                  name={dt.name}
+                  color={dt.color}
+                />
+              );
+            })
+          )}
         </Grid>
       </Container>
       <Footer
